@@ -6,20 +6,22 @@
     <title>Produtos Siderúrgicos – CORIEL</title>
     <style>
         :root {
-            --primary: #0B1F33;
-            --steel: #66717A;
-            --white: #FFFFFF;
-            --accent: #1769AA;
-            --accent-hover: #114F80;
-            --bg-light: #F4F6F7;
-            --text-dark: #33404A;
-            --border-color: #D5DADD;
-            --text-light: #D9E0E5;
+            /* PALETA DE CORES ESPECIFICADA */
+            --primary: #0B1F33;        /* Azul-marinho */
+            --steel: #66717A;          /* Cinza aço */
+            --white: #FFFFFF;          /* Branco */
+            --accent: #1769AA;         /* Azul de destaque */
+            --accent-hover: #114F80;   /* Azul de destaque escuro */
+            --bg-light: #F4F6F7;       /* Cinza claro para fundo */
+            --border-color: #D5DADD;   /* Borda clara */
+            --text-dark: #33404A;       /* Texto escuro */
+            --text-light: #D9E0E5;      /* Texto claro */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-        body { background-color: var(--white); color: var(--text-dark); line-height: 1.6; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
 
+        /* 1. CABEÇALHO / MENU */
         header { background: var(--primary); color: var(--white); padding: 1rem 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         .logo h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: 1px; color: var(--white); }
         .logo span { color: var(--accent); }
@@ -29,47 +31,114 @@
         .nav-link { text-decoration: none; color: var(--white); font-size: 0.95rem; font-weight: 600; padding: 0.6rem 1rem; border-radius: 4px; transition: 0.3s; }
         .nav-link:hover, .nav-link.active { background: var(--accent); color: var(--white); }
         .btn-cta-nav { background: var(--accent); color: var(--white); padding: 0.6rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-cta-nav:hover { background: var(--accent-hover); }
 
         .container { padding: 3rem 8%; max-width: 1300px; margin: 0 auto; }
 
-        /* 4. CATEGORIAS DE PRODUTOS */
-        .categories-section { background: var(--bg-light); padding: 2.5rem; border-radius: 10px; border: 1px solid var(--border-color); margin-bottom: 3rem; text-align: center; }
-        .categories-section h3 { color: var(--primary); font-size: 1.5rem; margin-bottom: 1.5rem; }
-        .category-tags { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-        .cat-tag { background: var(--white); border: 1px solid var(--border-color); padding: 0.8rem 1.5rem; border-radius: 30px; font-weight: 600; color: var(--steel); display: flex; align-items: center; gap: 0.5rem; transition: 0.3s; }
-        .cat-tag span { color: var(--accent); font-weight: bold; }
-        .cat-tag:hover { border-color: var(--accent); color: var(--primary); transform: translateY(-2px); }
+        /* 3. SEÇÃO NOSSOS PRODUTOS - GRELHA COM CORTE DIAGONAL */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; margin-bottom: 4rem; }
+        
+        .product-card { 
+            position: relative; 
+            background: var(--white); 
+            height: 240px; 
+            overflow: hidden; 
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04); 
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+        .product-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        
+        .product-card img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* 3. SEÇÃO NOSSOS PRODUTOS */
-        .products-title { color: var(--primary); text-align: center; font-size: 2.2rem; margin-bottom: 0.5rem; }
-        .products-desc { color: var(--steel); text-align: center; font-size: 1.1rem; margin-bottom: 3rem; }
+        /* RECORTE DIAGONAL (#0B1F33) */
+        .slant-overlay {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 85%;
+            height: 65%;
+            background: var(--primary);
+            clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 1.2rem 1.5rem;
+            z-index: 2;
+        }
 
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
-        .card { background: var(--white); border-radius: 8px; border: 1px solid var(--border-color); overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.03); transition: 0.3s; }
-        .card:hover { transform: translateY(-4px); border-color: var(--accent); }
-        .card img { width: 100%; height: 200px; object-fit: cover; }
-        .card-body { padding: 1.5rem; }
-        .card-body h4 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.8rem; }
-        .card-body p { color: var(--steel); font-size: 0.95rem; margin-bottom: 1.2rem; }
-        .card-body ul { list-style-position: inside; color: var(--steel); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .product-title {
+            color: var(--white);
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-align: right;
+            letter-spacing: 0.5px;
+        }
 
-        .btn-card { color: var(--accent); text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
-        .btn-card:hover { color: var(--accent-hover); text-decoration: underline; }
+        /* BOTÃO HOVER EM AZUL DE DESTAQUE (#1769AA) */
+        .product-card .hover-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            opacity: 0;
+            transition: 0.3s;
+            z-index: 3;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .product-card:hover .hover-btn { opacity: 1; }
 
-        /* CALCULADORA */
-        .calc-box { background: var(--bg-light); padding: 2.5rem; border-radius: 10px; border: 1px solid var(--border-color); max-width: 700px; margin: 0 auto; }
-        .calc-box h3 { color: var(--primary); margin-bottom: 1rem; text-align: center; }
-        .form-group { margin-bottom: 1.2rem; }
-        .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--primary); }
-        .form-group input, .form-group select { width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 6px; font-size: 1rem; outline: none; background: var(--white); }
-        .cta-btn { background: var(--accent); color: var(--white); border: none; padding: 0.8rem 1.5rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: 0.3s; width: 100%; }
-        .cta-btn:hover { background: var(--accent-hover); }
-        .calc-result { background: #EBF8FF; border-left: 4px solid var(--accent); padding: 1rem; margin-top: 1.5rem; font-size: 1.1rem; font-weight: bold; color: var(--primary); display: none; }
+        /* SECÇÃO DIFERENCIAIS */
+        .diferenciais-section { margin: 5rem 0 3rem 0; }
+        .diferenciais-section h3 { color: var(--primary); font-size: 2rem; margin-bottom: 2rem; }
+        
+        .grid-diferenciais { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .card-diferencial { 
+            background: var(--primary); 
+            color: var(--white); 
+            padding: 2.5rem 2rem; 
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+        }
+        .card-diferencial h4 { font-size: 1.5rem; margin-bottom: 0.8rem; color: var(--white); font-weight: 700; }
+        .card-diferencial p { color: var(--text-light); font-size: 0.95rem; }
 
-        footer { background: var(--primary); color: var(--white); text-align: center; padding: 3rem 1rem 1.5rem 1rem; margin-top: 4rem; border-top: 1px solid var(--steel); }
-        footer a { color: var(--text-light); text-decoration: none; }
-        footer a:hover { color: var(--accent); }
-        .footer-line { border-top: 1px solid var(--steel); margin-top: 2rem; padding-top: 1rem; font-size: 0.85rem; color: var(--text-light); }
+        /* 6. SECÇÃO DE DESTAQUE / CHAMADA */
+        .cta-box { 
+            background: linear-gradient(rgba(11,31,51,0.88), rgba(11,31,51,0.88)), url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80') center/cover; 
+            color: var(--white); 
+            padding: 4rem 2rem; 
+            text-align: center; 
+            border-radius: 8px;
+            margin-top: 4rem;
+        }
+        .cta-box h3 { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--white); font-weight: 700; }
+        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        
+        .btn-primary-cta { background: var(--accent); color: var(--white); padding: 0.9rem 2.2rem; border-radius: 4px; font-weight: bold; text-decoration: none; transition: 0.3s; }
+        .btn-primary-cta:hover { background: var(--accent-hover); }
+        
+        .btn-secondary-cta { background: transparent; color: var(--white); border: 2px solid var(--white); padding: 0.9rem 2.2rem; border-radius: 4px; font-weight: bold; text-decoration: none; transition: 0.3s; }
+        .btn-secondary-cta:hover { background: var(--white); color: var(--primary); }
+
+        /* 8. RODAPÉ */
+        footer { background: var(--primary); color: var(--white); padding: 3rem 8% 1.5rem 8%; border-top: 1px solid var(--steel); margin-top: 5rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-bottom: 2rem; }
+        .footer-col h4 { color: var(--white); font-size: 1.2rem; margin-bottom: 1rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.6rem; }
+        .footer-col a { color: var(--text-light); text-decoration: none; transition: 0.3s; }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-bottom { text-align: center; border-top: 1px solid var(--steel); padding-top: 1.5rem; color: var(--steel); font-size: 0.85rem; }
 
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 1rem; text-align: center; }
@@ -94,123 +163,177 @@
     </header>
 
     <main class="container">
-        <!-- 4. Categorias de Produtos -->
-        <div class="categories-section">
-            <h3>Categorias de Materiais Siderúrgicos</h3>
-            <div class="category-tags">
-                <div class="cat-tag"><span>■</span> Chapas</div>
-                <div class="cat-tag"><span>■</span> Tubos</div>
-                <div class="cat-tag"><span>■</span> Varões</div>
-                <div class="cat-tag"><span>■</span> Perfis</div>
-                <div class="cat-tag"><span>■</span> Cantoneiras</div>
-                <div class="cat-tag"><span>■</span> Aço Inox</div>
-            </div>
+        <!-- GRELHA DE PRODUTOS MOSAICO (MESMA CONFIGURAÇÃO DO VÍDEO) -->
+        <div class="products-grid">
+            
+            <!-- Varões -->
+            <a href="contacto.html" class="product-card">
+                <img src="https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80" alt="Varões">
+                <div class="hover-btn">Ver produtos</div>
+                <div class="slant-overlay">
+                    <span class="product-title">Varões</span>
+                </div>
+            </a>
+
+            <!-- Tubos -->
+            <a href="contacto.html" class="product-card">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Tubos">
+                <div class="hover-btn">Ver produtos</div>
+                <div class="slant-overlay">
+                    <span class="product-title">Tubos</span>
+                </div>
+            </a>
+
+            <!-- Perfis -->
+            <a href="contacto.html" class="product-card">
+                <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Perfis">
+                <div class="hover-btn">Ver produtos</div>
+                <div class="slant-overlay">
+                    <span class="product-title">Perfis</span>
+                </div>
+            </a>
+
+            <!-- Chapas -->
+            <a href="contacto.html" class="product-card">
+                <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Chapas">
+                <div class="hover-btn">Ver produtos</div>
+                <div class="slant-overlay">
+                    <span class="product-title">Chapas</span>
+                </div>
+            </a>
+
+            <!-- Arames -->
+            <a href="contacto.html" class="product-card">
+                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" alt="Arames">
+                <div class="hover-btn">Ver produtos</div>
+                <div class="slant-overlay">
+                    <span class="product-title">Arames</span>
+                </div>
+            </a>
+
+            <!-- Barramentos -->
+            <a href="contacto.html" class="product-card">
+                <img src="https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80" alt="Barramentos">
+                <div class="hover-btn">Ver produtos</div>
+                <div class="slant-overlay">
+                    <span class="product-title">Barramentos</span>
+                </div>
+            </a>
+
+            <!-- Redes -->
+            <a href="contacto.html" class="product-card">
+                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" alt="Redes">
+                <div class="hover-btn">Ver produtos</div>
+                <div class="slant-overlay">
+                    <span class="product-title">Redes</span>
+                </div>
+            </a>
+
+            <!-- Malhas-Sol -->
+            <a href="contacto.html" class="product-card">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Malhas-Sol">
+                <div class="hover-btn">Ver produtos</div>
+                <div class="slant-overlay">
+                    <span class="product-title">Malhas-Sol</span>
+                </div>
+            </a>
+
+            <!-- Painel Electro -->
+            <a href="contacto.html" class="product-card">
+                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" alt="Painel Electro">
+                <div class="hover-btn">Ver produtos</div>
+                <div class="slant-overlay">
+                    <span class="product-title">Painel Electro</span>
+                </div>
+            </a>
+
+            <!-- Postos -->
+            <a href="contacto.html" class="product-card">
+                <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Postos">
+                <div class="hover-btn">Ver produtos</div>
+                <div class="slant-overlay">
+                    <span class="product-title">Postos</span>
+                </div>
+            </a>
+
+            <!-- Fixador PVC -->
+            <a href="contacto.html" class="product-card">
+                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" alt="Fixador PVC">
+                <div class="hover-btn">Ver produtos</div>
+                <div class="slant-overlay">
+                    <span class="product-title">Fixador PVC</span>
+                </div>
+            </a>
+
+            <!-- Tampa PVC -->
+            <a href="contacto.html" class="product-card">
+                <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Tampa PVC">
+                <div class="hover-btn">Ver produtos</div>
+                <div class="slant-overlay">
+                    <span class="product-title">Tampa PVC</span>
+                </div>
+            </a>
+
         </div>
 
-        <!-- 3. Seção "Nossos Produtos" -->
-        <h2 class="products-title">Nossos Produtos</h2>
-        <p class="products-desc">Soluções completas e certificadas para a indústria e construção civil.</p>
-
-        <div class="grid-3">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80" alt="Perfis Estruturais">
-                <div class="card-body">
-                    <h4>Perfis Estruturais</h4>
-                    <p>Perfis laminados a quente ideais para estruturas metálicas pesadas.</p>
-                    <ul>
-                        <li>Vigas HEB / HEA / IPE</li>
-                        <li>Perfis UPN e Cantoneiras</li>
-                    </ul>
-                    <a href="contacto.html" class="btn-card">Cotar Perfis →</a>
+        <!-- SECÇÃO DIFERENCIAIS -->
+        <section class="diferenciais-section">
+            <h3>Diferenciais</h3>
+            <div class="grid-diferenciais">
+                <div class="card-diferencial">
+                    <h4>Ética</h4>
+                    <p>Negócios com seriedade e cumprimento rigoroso da legislação vigente.</p>
+                </div>
+                <div class="card-diferencial">
+                    <h4>Qualidade</h4>
+                    <p>Produtos alinhados com padrões de qualidade rigorosamente certificados.</p>
+                </div>
+                <div class="card-diferencial">
+                    <h4>Liderança</h4>
+                    <p>Experiência e conhecimento aprofundado do mercado siderúrgico nacional.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Chapas e Bobinas">
-                <div class="card-body">
-                    <h4>Chapas & Bobinas</h4>
-                    <p>Gama completa de chapas siderúrgicas para fabricação e caldeiraria.</p>
-                    <ul>
-                        <li>Chapas Laminadas (Quente/Frio)</li>
-                        <li>Chapas Xadrez e Galvanizadas</li>
-                    </ul>
-                    <a href="contacto.html" class="btn-card">Cotar Chapas →</a>
-                </div>
+        <!-- SECÇÃO DE CHAMADA / CTA FINAL -->
+        <div class="cta-box">
+            <h3>Precisa de produtos siderúrgicos para o seu projeto?</h3>
+            <div class="btn-group">
+                <a href="contacto.html" class="btn-primary-cta">Solicitar Orçamento</a>
+                <a href="https://wa.me/244900000000" class="btn-secondary-cta" target="_blank">Falar no WhatsApp</a>
             </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Tubos e Varões">
-                <div class="card-body">
-                    <h4>Tubos & Varões</h4>
-                    <p>Tubagens estruturais e varões de aço reforçado para obras.</p>
-                    <ul>
-                        <li>Tubos Quadrados, Retangulares e Redondos</li>
-                        <li>Varão de Construção e Espiamento</li>
-                    </ul>
-                    <a href="contacto.html" class="btn-card">Cotar Tubos & Varões →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Calculadora Estimativa -->
-        <div class="calc-box">
-            <h3>Calculadora Estimativa de Peso do Aço</h3>
-            <p style="text-align: center; color: var(--steel); margin-bottom: 1.5rem; font-size: 0.95rem;">Estime o peso aproximado para transporte dos seus materiais.</p>
-
-            <div class="form-group">
-                <label for="tipoAco">Tipo de Material</label>
-                <select id="tipoAco">
-                    <option value="chapa">Chapa / Placa de Aço</option>
-                    <option value="varao">Varão / Barra Redonda</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="comprimento">Comprimento total (metros)</label>
-                <input type="number" id="comprimento" placeholder="Ex: 1.2" step="0.1">
-            </div>
-
-            <div class="form-group">
-                <label for="quantidade">Quantidade (Unidades)</label>
-                <input type="number" id="quantidade" placeholder="Ex: 50" value="1">
-            </div>
-
-            <button class="cta-btn" onclick="calcularPeso()">Calcular Peso Estimado</button>
-
-            <div id="resultadoCalc" class="calc-result"></div>
         </div>
     </main>
 
     <footer>
-        <p><strong>CORIEL – Comércio e Indústria (SU), LDA.</strong></p>
-        <p style="margin-top: 0.5rem;"><a href="index.html">Início</a> | <a href="empresa.html">Sobre Nós</a> | <a href="produtos.html">Produtos Siderúrgicos</a> | <a href="contacto.html">Contacto</a></p>
-        <div class="footer-line">
-            <p>© 2026 CORIEL. O seu parceiro de aço em Angola.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo">
+                    <h2 style="color: var(--white);">CORIEL<span>.</span></h2>
+                </div>
+                <p style="color: var(--text-light); margin-top: 0.5rem;">O seu parceiro de aço em Angola.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="empresa.html">Sobre Nós</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contacto.html">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contactos</h4>
+                <ul>
+                    <li><a href="tel:+244900000000">+244 900 000 000</a></li>
+                    <li><a href="mailto:comercial@coriel.it.ao">comercial@coriel.it.ao</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 CORIEL. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script>
-        function calcularPeso() {
-            const comp = parseFloat(document.getElementById('comprimento').value);
-            const qtd = parseInt(document.getElementById('quantidade').value);
-            const resBox = document.getElementById('resultadoCalc');
-
-            if (isNaN(comp) || isNaN(qtd) || comp <= 0 || qtd <= 0) {
-                resBox.style.display = 'block';
-                resBox.style.background = '#FFF5F5';
-                resBox.style.borderColor = '#E53E3E';
-                resBox.style.color = '#C53030';
-                resBox.innerText = 'Por favor, insira valores válidos para o comprimento e quantidade.';
-                return;
-            }
-
-            const pesoEstimado = (comp * 2.5 * qtd).toFixed(2);
-            resBox.style.display = 'block';
-            resBox.style.background = '#EBF8FF';
-            resBox.style.borderColor = '#1769AA';
-            resBox.style.color = '#0B1F33';
-            resBox.innerText = `Peso Estimado Total: ~ ${pesoEstimado} kg (para ${qtd} unidade(s))`;
-        }
-    </script>
 </body>
 </html>
