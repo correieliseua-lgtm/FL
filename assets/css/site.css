@@ -198,6 +198,17 @@ a{color:inherit}
 @media(max-width:620px){.company-hero{min-height:440px}.company-process:after{font-size:90px}}
 
 
+/* A nossa identidade — fundo azul integral */
+.company-tabs-section .company-tabs,.company-tabs-section .company-tab-panels{background:var(--navy)}
+.company-tabs-section .company-tab-panels{border:1px solid rgba(255,255,255,.18);border-top:0}
+.company-tabs-section .company-tab-panel{background:var(--navy);color:#fff}
+.company-tabs-section .company-tab-panel h3{color:#fff}
+.company-tabs-section .company-tab-panel p{color:#C7D0D8}
+.company-tabs-section .company-tab-panel .tab-number{color:#E7BD84}
+.company-tabs-section .values-tab-grid div{background:var(--navy-2);border-left-color:var(--accent)}
+.company-tabs-section .values-tab-grid strong{color:#fff}
+.company-tabs-section .values-tab-grid span{color:#C7D0D8}
+
 /* Nova estrutura institucional da pagina A Empresa */
 .company-history-hero{background-position:center 45%}
 .company-tabs-section{padding:82px 0;background:var(--navy);color:#fff}.company-tabs-section .section-head h2{color:#fff}.company-tabs-section .section-head p{color:#C7D0D8}.company-tabs{border-bottom-color:rgba(255,255,255,.2)}.company-tab{color:#C7D0D8}.company-tab:hover{color:#fff}.company-tab.is-active{color:#fff;border-bottom-color:var(--accent)}
