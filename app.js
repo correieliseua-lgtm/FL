@@ -52,10 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <nav>
             <a href="index.html" class="nav-link">Home</a>
-            <a href="empresa.html" class="nav-link">Sobre Nós</a>
+            <a href="empresa.html" class="nav-link">empresa</a>
             <a href="produtos.html" class="nav-link">Produtos</a>
             <a href="contacto.html" class="nav-link">Contactos</a>
-            <a href="contacto.html" class="btn-cta-nav">Solicitar Orçamento</a>
         </nav>
     </header>
     `;
