@@ -5,53 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CORIEL – O seu parceiro de aço!</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Aptos:wght@400;600;700;800&display=swap');
+
         :root {
-            --primary: #0A2540;
-            --primary-light: #153D66;
-            --accent: #E65100;
-            --accent-hover: #BF360C;
-            --bg-body: #F4F6F8;
-            --bg-card: #FFFFFF;
-            --text-dark: #1A202C;
-            --text-muted: #4A5568;
-            --border-color: #CBD5E0;
+            --primary: #0B1F33;
+            --steel: #66717A;
+            --white: #FFFFFF;
+            --accent: #1769AA;
+            --accent-hover: #114F80;
+            --bg-light: #F4F6F7;
+            --border-color: #D5DADD;
+            --text-dark: #33404A;
+            --text-light: #D9E0E5;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-        body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Aptos', 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
 
-        header { background: var(--primary); color: #FFF; padding: 1rem 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-        .logo h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: 1px; color: #FFF; text-decoration: none; }
+        /* CABEÇALHO / BANNER FINO */
+        header { 
+            background: var(--primary); 
+            color: var(--white); 
+            padding: 0.6rem 8%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
+            height: 60px;
+        }
+        .logo h1 { font-size: 1.6rem; font-weight: 800; letter-spacing: 1px; color: var(--white); }
         .logo span { color: var(--accent); }
-        .slogan-tag { font-size: 0.8rem; color: #CBD5E0; font-style: italic; display: block; }
+        .slogan-tag { font-size: 0.75rem; color: var(--text-light); font-style: italic; display: block; }
 
-        nav { display: flex; gap: 1rem; }
-        .nav-link { text-decoration: none; color: #FFF; font-size: 1rem; font-weight: 600; padding: 0.6rem 1.2rem; border-radius: 4px; transition: 0.3s; }
-        .nav-link:hover, .nav-link.active { background: var(--accent); color: #FFF; }
+        nav { display: flex; gap: 0.8rem; align-items: center; }
+        .nav-link { text-decoration: none; color: var(--white); font-size: 0.9rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 4px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { background: var(--accent); color: var(--white); }
+        .btn-cta-nav { background: var(--accent); color: var(--white); padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        .btn-cta-nav:hover { background: var(--accent-hover); }
 
         .container { padding: 3rem 8%; max-width: 1300px; margin: 0 auto; }
 
-        .hero { background: linear-gradient(135deg, rgba(10,37,64,0.92), rgba(21,61,102,0.88)), url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80') center/cover; color: #FFF; padding: 5rem 2rem; border-radius: 12px; text-align: center; margin-bottom: 3rem; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-        .hero h2 { font-size: 2.8rem; margin-bottom: 1rem; font-weight: 700; }
-        .hero p { font-size: 1.3rem; max-width: 750px; margin: 0 auto 2rem auto; color: #E2E8F0; }
+        /* BANNER PRINCIPAL COM CARROSSEL / SLIDER */
+        .hero { 
+            background: linear-gradient(rgba(11,31,51,0.85), rgba(11,31,51,0.85)), url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80') center/cover; 
+            color: var(--white); 
+            padding: 6rem 2rem; 
+            border-radius: 4px; 
+            text-align: center; 
+            margin-bottom: 3rem; 
+        }
+        .hero h2 { font-size: 2.8rem; margin-bottom: 1rem; font-weight: 800; color: var(--white); }
+        .hero p { font-size: 1.2rem; max-width: 750px; margin: 0 auto 2rem auto; color: var(--text-light); }
         
-        .cta-btn { background: var(--accent); color: #FFF; border: none; padding: 0.9rem 2.2rem; font-size: 1.1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; }
-        .cta-btn:hover { background: var(--accent-hover); transform: translateY(-2px); }
+        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .cta-btn { background: var(--accent); color: var(--white); border: 2px solid var(--accent); padding: 0.8rem 2rem; font-size: 1rem; font-weight: bold; border-radius: 4px; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; }
+        .cta-btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
 
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.04); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.08); }
-        .card-body { padding: 1.5rem; }
-        .card-body h3 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.8rem; }
-        .card-body p { color: var(--text-muted); font-size: 0.95rem; }
+        /* SECÇÃO APRESENTAÇÃO DIAGONAL (ESTILO REFERÊNCIA) */
+        .about-preview {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-text { padding: 3rem; }
+        .about-text h3 { color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem; font-weight: 700; }
+        .about-text p { color: var(--steel); font-size: 1rem; margin-bottom: 1rem; }
+        .about-img { width: 100%; height: 100%; object-fit: cover; clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); }
 
-        footer { background: var(--primary); color: #FFF; text-align: center; padding: 2.5rem 1rem; margin-top: 4rem; border-top: 4px solid var(--accent); }
-        footer p { opacity: 0.9; font-size: 0.95rem; }
+        /* SECÇÃO DE CHAMADA / CTA FINAL */
+        .cta-banner { 
+            background: var(--primary); 
+            color: var(--white); 
+            padding: 3.5rem 2rem; 
+            text-align: center; 
+            clip-path: polygon(0 0, 100% 0, 100% 88%, 95% 100%, 0 100%);
+            margin: 3rem 0; 
+        }
+        .cta-banner h3 { font-size: 2rem; margin-bottom: 0.8rem; color: var(--white); }
+        .cta-banner p { color: var(--text-light); font-size: 1.1rem; margin-bottom: 1.5rem; }
+
+        /* RODAPÉ */
+        footer { background: var(--primary); color: var(--white); padding: 3rem 8% 1.5rem 8%; border-top: 1px solid var(--steel); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-col h4 { color: var(--white); font-size: 1.1rem; margin-bottom: 1rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col a { color: var(--text-light); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-bottom { text-align: center; border-top: 1px solid var(--steel); padding-top: 1.2rem; color: var(--steel); font-size: 0.85rem; }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 1rem; text-align: center; }
-            nav { flex-wrap: wrap; justify-content: center; }
-            .hero h2 { font-size: 2rem; }
+            header { flex-direction: column; height: auto; padding: 0.8rem; }
+            .about-preview { grid-template-columns: 1fr; }
+            .about-img { clip-path: none; height: 250px; }
         }
     </style>
 </head>
@@ -64,46 +117,69 @@
         </div>
         <nav>
             <a href="index.html" class="nav-link active">Home</a>
-            <a href="empresa.html" class="nav-link">Empresa</a>
+            <a href="empresa.html" class="nav-link">Sobre Nós</a>
             <a href="produtos.html" class="nav-link">Produtos</a>
-            <a href="contacto.html" class="nav-link">Contacto</a>
+            <a href="contacto.html" class="nav-link">Contactos</a>
+            <a href="contacto.html" class="btn-cta-nav">Solicitar Orçamento</a>
         </nav>
     </header>
 
     <main class="container">
+        <!-- Banner Principal -->
         <div class="hero">
-            <h2>CORIEL, o seu parceiro de aço!</h2>
-            <p>Fornecimento especializado de produtos siderúrgicos, materiais metálicos e equipamentos técnicos de elevada precisão e resistência.</p>
-            <a href="produtos.html" class="cta-btn">Ver Catálogo de Produtos</a>
+            <h2>Tudo em Produtos Siderúrgicos para a Sua Obra</h2>
+            <p>Varões, chapas, tubos, perfis metálicos, redes, arames e muito mais para atender qualquer necessidade.</p>
+            <div class="btn-group">
+                <a href="produtos.html" class="cta-btn">Ver Produtos</a>
+            </div>
         </div>
 
-        <h3 style="text-align: center; color: var(--primary); margin-bottom: 2rem; font-size: 1.8rem;">Especialidade & Excelência Siderúrgica</h3>
+        <!-- Apresentação Institucional em Ângulo -->
+        <div class="about-preview">
+            <div class="about-text">
+                <h3>A CORIEL é o seu parceiro especializado no fornecimento de produtos siderúrgicos.</h3>
+                <p>Distribuímos produtos de aço de alta qualidade para construção, indústria e infraestruturas em Angola.</p>
+                <p>Temos como propósito fortalecer o fornecimento formal e técnico de ligas e estruturas metálicas no mercado nacional.</p>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Tubos de Aço" class="about-img">
+            </div>
+        </div>
 
-        <div class="grid-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3>Garantia de Qualidade</h3>
-                    <p>Produtos rigorosamente selecionados em conformidade com as normas internacionais de resistência metálica e construção civil.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h3>Atendimento Técnico</h3>
-                    <p>Apoio comercial dedicado ao dimensionamento preciso das necessidades do seu projeto ou obra industrial.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h3>Logística Eficiente</h3>
-                    <p>Prontidão no fornecimento de perfis, chapas, tubos e varões em Luanda e em todo o território nacional.</p>
-                </div>
-            </div>
+        <!-- Seção de Destaque / Chamada -->
+        <div class="cta-banner">
+            <h3>Precisa de produtos siderúrgicos para o seu projeto?</h3>
+            <p>Fornecemos soluções completas em aço para a sua indústria ou empreendimento.</p>
+            <a href="contacto.html" class="cta-btn">Solicitar Orçamento</a>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 CORIEL – Comércio e Indústria (SU), LDA. Todos os direitos reservados.</p>
-        <p style="margin-top: 0.5rem; color: #CBD5E0; font-size: 0.85rem;">O seu parceiro de aço em Angola.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h2 style="color: var(--white); font-weight: 800;">CORIEL<span>.</span></h2>
+                <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 0.5rem;">O seu parceiro de aço em Angola.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="empresa.html">Sobre Nós</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contacto.html">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contactos</h4>
+                <ul>
+                    <li><a href="mailto:comercial@coriel.it.ao">comercial@coriel.it.ao</a></li>
+                    <li><a href="tel:+244900000000">Luanda, Angola</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 CORIEL. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
 </body>
