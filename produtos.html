@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CORIEL – O seu parceiro de aço!</title>
+    <title>Produtos Siderúrgicos – CORIEL</title>
     <style>
         :root {
             --primary: #0B1F33;
@@ -20,7 +20,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
         body { background-color: var(--white); color: var(--text-dark); line-height: 1.6; }
 
-        /* CABEÇALHO / MENU */
         header { background: var(--primary); color: var(--white); padding: 1rem 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         .logo h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: 1px; color: var(--white); }
         .logo span { color: var(--accent); }
@@ -30,44 +29,51 @@
         .nav-link { text-decoration: none; color: var(--white); font-size: 0.95rem; font-weight: 600; padding: 0.6rem 1rem; border-radius: 4px; transition: 0.3s; }
         .nav-link:hover, .nav-link.active { background: var(--accent); color: var(--white); }
         .btn-cta-nav { background: var(--accent); color: var(--white); padding: 0.6rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .btn-cta-nav:hover { background: var(--accent-hover); }
 
         .container { padding: 3rem 8%; max-width: 1300px; margin: 0 auto; }
 
-        /* BANNER PRINCIPAL */
-        .hero { background: linear-gradient(135deg, rgba(11,31,51,0.85), rgba(11,31,51,0.85)), url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80') center/cover; color: var(--white); padding: 5rem 2rem; border-radius: 12px; text-align: center; margin-bottom: 3rem; }
-        .hero h2 { font-size: 2.8rem; margin-bottom: 1rem; font-weight: 700; color: var(--white); }
-        .hero p { font-size: 1.2rem; max-width: 750px; margin: 0 auto 2rem auto; color: var(--text-light); }
-        
-        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .cta-btn { background: var(--accent); color: var(--white); border: 2px solid var(--accent); padding: 0.8rem 2rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; }
-        .cta-btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
-        .cta-btn-secondary { background: transparent; color: var(--white); border: 2px solid var(--white); padding: 0.8rem 2rem; font-size: 1rem; font-weight: bold; border-radius: 6px; transition: 0.3s; text-decoration: none; display: inline-block; }
-        .cta-btn-secondary:hover { background: var(--white); color: var(--primary); }
+        /* 4. CATEGORIAS DE PRODUTOS */
+        .categories-section { background: var(--bg-light); padding: 2.5rem; border-radius: 10px; border: 1px solid var(--border-color); margin-bottom: 3rem; text-align: center; }
+        .categories-section h3 { color: var(--primary); font-size: 1.5rem; margin-bottom: 1.5rem; }
+        .category-tags { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+        .cat-tag { background: var(--white); border: 1px solid var(--border-color); padding: 0.8rem 1.5rem; border-radius: 30px; font-weight: 600; color: var(--steel); display: flex; align-items: center; gap: 0.5rem; transition: 0.3s; }
+        .cat-tag span { color: var(--accent); font-weight: bold; }
+        .cat-tag:hover { border-color: var(--accent); color: var(--primary); transform: translateY(-2px); }
 
-        /* CARDS E DESTAQUES */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: var(--white); border-radius: 8px; border: 1px solid var(--border-color); padding: 1.8rem; box-shadow: 0 4px 8px rgba(0,0,0,0.03); transition: 0.3s; }
+        /* 3. SEÇÃO NOSSOS PRODUTOS */
+        .products-title { color: var(--primary); text-align: center; font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .products-desc { color: var(--steel); text-align: center; font-size: 1.1rem; margin-bottom: 3rem; }
+
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+        .card { background: var(--white); border-radius: 8px; border: 1px solid var(--border-color); overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.03); transition: 0.3s; }
         .card:hover { transform: translateY(-4px); border-color: var(--accent); }
-        .card h3 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.8rem; }
-        .card p { color: var(--steel); font-size: 0.95rem; }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-body { padding: 1.5rem; }
+        .card-body h4 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.8rem; }
+        .card-body p { color: var(--steel); font-size: 0.95rem; margin-bottom: 1.2rem; }
+        .card-body ul { list-style-position: inside; color: var(--steel); font-size: 0.9rem; margin-bottom: 1.5rem; }
 
-        /* SEÇÃO DE DESTAQUE / CHAMADA */
-        .cta-banner { background: var(--primary); color: var(--white); padding: 3.5rem 2rem; border-radius: 10px; text-align: center; margin: 3rem 0; }
-        .cta-banner h3 { font-size: 2rem; margin-bottom: 0.8rem; color: var(--white); }
-        .cta-banner p { color: var(--text-light); font-size: 1.1rem; margin-bottom: 1.5rem; }
+        .btn-card { color: var(--accent); text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
+        .btn-card:hover { color: var(--accent-hover); text-decoration: underline; }
 
-        /* RODAPÉ */
+        /* CALCULADORA */
+        .calc-box { background: var(--bg-light); padding: 2.5rem; border-radius: 10px; border: 1px solid var(--border-color); max-width: 700px; margin: 0 auto; }
+        .calc-box h3 { color: var(--primary); margin-bottom: 1rem; text-align: center; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--primary); }
+        .form-group input, .form-group select { width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 6px; font-size: 1rem; outline: none; background: var(--white); }
+        .cta-btn { background: var(--accent); color: var(--white); border: none; padding: 0.8rem 1.5rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: 0.3s; width: 100%; }
+        .cta-btn:hover { background: var(--accent-hover); }
+        .calc-result { background: #EBF8FF; border-left: 4px solid var(--accent); padding: 1rem; margin-top: 1.5rem; font-size: 1.1rem; font-weight: bold; color: var(--primary); display: none; }
+
         footer { background: var(--primary); color: var(--white); text-align: center; padding: 3rem 1rem 1.5rem 1rem; margin-top: 4rem; border-top: 1px solid var(--steel); }
-        footer a { color: var(--text-light); text-decoration: none; transition: 0.3s; }
+        footer a { color: var(--text-light); text-decoration: none; }
         footer a:hover { color: var(--accent); }
-        footer p { color: var(--text-light); font-size: 0.95rem; }
         .footer-line { border-top: 1px solid var(--steel); margin-top: 2rem; padding-top: 1rem; font-size: 0.85rem; color: var(--text-light); }
 
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 1rem; text-align: center; }
             nav { flex-wrap: wrap; justify-content: center; }
-            .hero h2 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -79,47 +85,99 @@
             <span class="slogan-tag">O seu parceiro de aço!</span>
         </div>
         <nav>
-            <a href="index.html" class="nav-link active">Início</a>
+            <a href="index.html" class="nav-link">Início</a>
             <a href="empresa.html" class="nav-link">Sobre Nós</a>
-            <a href="produtos.html" class="nav-link">Produtos</a>
+            <a href="produtos.html" class="nav-link active">Produtos</a>
             <a href="contacto.html" class="nav-link">Contacto</a>
             <a href="contacto.html" class="btn-cta-nav">Solicitar Cotação</a>
         </nav>
     </header>
 
     <main class="container">
-        <!-- Banner Principal -->
-        <div class="hero">
-            <h2>CORIEL, o seu parceiro de aço!</h2>
-            <p>Fornecimento especializado de produtos siderúrgicos, materiais metálicos e equipamentos técnicos de elevada precisão e resistência.</p>
-            <div class="btn-group">
-                <a href="produtos.html" class="cta-btn">Ver Catálogo de Produtos</a>
-                <a href="contacto.html" class="cta-btn-secondary">Pedir Orçamento</a>
+        <!-- 4. Categorias de Produtos -->
+        <div class="categories-section">
+            <h3>Categorias de Materiais Siderúrgicos</h3>
+            <div class="category-tags">
+                <div class="cat-tag"><span>■</span> Chapas</div>
+                <div class="cat-tag"><span>■</span> Tubos</div>
+                <div class="cat-tag"><span>■</span> Varões</div>
+                <div class="cat-tag"><span>■</span> Perfis</div>
+                <div class="cat-tag"><span>■</span> Cantoneiras</div>
+                <div class="cat-tag"><span>■</span> Aço Inox</div>
             </div>
         </div>
 
-        <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem; font-size: 2rem;">Excelência no Setor Siderúrgico</h2>
+        <!-- 3. Seção "Nossos Produtos" -->
+        <h2 class="products-title">Nossos Produtos</h2>
+        <p class="products-desc">Soluções completas e certificadas para a indústria e construção civil.</p>
 
         <div class="grid-3">
             <div class="card">
-                <h3>Garantia de Qualidade</h3>
-                <p>Produtos rigorosamente selecionados em conformidade com as normas internacionais de resistência metálica e construção civil.</p>
+                <img src="https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80" alt="Perfis Estruturais">
+                <div class="card-body">
+                    <h4>Perfis Estruturais</h4>
+                    <p>Perfis laminados a quente ideais para estruturas metálicas pesadas.</p>
+                    <ul>
+                        <li>Vigas HEB / HEA / IPE</li>
+                        <li>Perfis UPN e Cantoneiras</li>
+                    </ul>
+                    <a href="contacto.html" class="btn-card">Cotar Perfis →</a>
+                </div>
             </div>
+
             <div class="card">
-                <h3>Atendimento Técnico</h3>
-                <p>Apoio comercial dedicado ao dimensionamento preciso das necessidades do seu projeto ou obra industrial.</p>
+                <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Chapas e Bobinas">
+                <div class="card-body">
+                    <h4>Chapas & Bobinas</h4>
+                    <p>Gama completa de chapas siderúrgicas para fabricação e caldeiraria.</p>
+                    <ul>
+                        <li>Chapas Laminadas (Quente/Frio)</li>
+                        <li>Chapas Xadrez e Galvanizadas</li>
+                    </ul>
+                    <a href="contacto.html" class="btn-card">Cotar Chapas →</a>
+                </div>
             </div>
+
             <div class="card">
-                <h3>Logística Eficiente</h3>
-                <p>Prontidão no fornecimento de perfis, chapas, tubos e varões em Luanda e em todo o território nacional.</p>
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Tubos e Varões">
+                <div class="card-body">
+                    <h4>Tubos & Varões</h4>
+                    <p>Tubagens estruturais e varões de aço reforçado para obras.</p>
+                    <ul>
+                        <li>Tubos Quadrados, Retangulares e Redondos</li>
+                        <li>Varão de Construção e Espiamento</li>
+                    </ul>
+                    <a href="contacto.html" class="btn-card">Cotar Tubos & Varões →</a>
+                </div>
             </div>
         </div>
 
-        <!-- Seção de Destaque / Chamada -->
-        <div class="cta-banner">
-            <h3>Precisa de materiais siderúrgicos para o seu projeto?</h3>
-            <p>Fornecemos soluções completas em aço para a sua indústria ou empreendimento com total garantia e rapidez.</p>
-            <a href="contacto.html" class="cta-btn">Falar com a Equipa Comercial</a>
+        <!-- Calculadora Estimativa -->
+        <div class="calc-box">
+            <h3>Calculadora Estimativa de Peso do Aço</h3>
+            <p style="text-align: center; color: var(--steel); margin-bottom: 1.5rem; font-size: 0.95rem;">Estime o peso aproximado para transporte dos seus materiais.</p>
+
+            <div class="form-group">
+                <label for="tipoAco">Tipo de Material</label>
+                <select id="tipoAco">
+                    <option value="chapa">Chapa / Placa de Aço</option>
+                    <option value="varao">Varão / Barra Redonda</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comprimento">Comprimento total (metros)</label>
+                <input type="number" id="comprimento" placeholder="Ex: 1.2" step="0.1">
+            </div>
+
+            <div class="form-group">
+                <label for="quantidade">Quantidade (Unidades)</label>
+                <input type="number" id="quantidade" placeholder="Ex: 50" value="1">
+            </div>
+
+            <button class="cta-btn" onclick="calcularPeso()">Calcular Peso Estimado</button>
+
+            <div id="resultadoCalc" class="calc-result"></div>
         </div>
     </main>
 
@@ -131,5 +189,28 @@
         </div>
     </footer>
 
+    <script>
+        function calcularPeso() {
+            const comp = parseFloat(document.getElementById('comprimento').value);
+            const qtd = parseInt(document.getElementById('quantidade').value);
+            const resBox = document.getElementById('resultadoCalc');
+
+            if (isNaN(comp) || isNaN(qtd) || comp <= 0 || qtd <= 0) {
+                resBox.style.display = 'block';
+                resBox.style.background = '#FFF5F5';
+                resBox.style.borderColor = '#E53E3E';
+                resBox.style.color = '#C53030';
+                resBox.innerText = 'Por favor, insira valores válidos para o comprimento e quantidade.';
+                return;
+            }
+
+            const pesoEstimado = (comp * 2.5 * qtd).toFixed(2);
+            resBox.style.display = 'block';
+            resBox.style.background = '#EBF8FF';
+            resBox.style.borderColor = '#1769AA';
+            resBox.style.color = '#0B1F33';
+            resBox.innerText = `Peso Estimado Total: ~ ${pesoEstimado} kg (para ${qtd} unidade(s))`;
+        }
+    </script>
 </body>
 </html>
