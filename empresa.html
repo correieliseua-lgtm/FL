@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Empresa – CORIEL</title>
+    <style>
+        :root {
+            --primary: #0A2540;
+            --primary-light: #153D66;
+            --accent: #E65100;
+            --accent-hover: #BF360C;
+            --bg-body: #F4F6F8;
+            --bg-card: #FFFFFF;
+            --text-dark: #1A202C;
+            --text-muted: #4A5568;
+            --border-color: #CBD5E0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; }
+
+        header { background: var(--primary); color: #FFF; padding: 1rem 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .logo h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: 1px; color: #FFF; }
+        .logo span { color: var(--accent); }
+        .slogan-tag { font-size: 0.8rem; color: #CBD5E0; font-style: italic; display: block; }
+
+        nav { display: flex; gap: 1rem; }
+        .nav-link { text-decoration: none; color: #FFF; font-size: 1rem; font-weight: 600; padding: 0.6rem 1.2rem; border-radius: 4px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { background: var(--accent); color: #FFF; }
+
+        .container { padding: 3rem 8%; max-width: 1300px; margin: 0 auto; }
+
+        .about-box { background: var(--bg-card); padding: 3rem; border-radius: 10px; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 3rem; }
+        .about-box h2 { color: var(--primary); margin-bottom: 1.5rem; border-bottom: 3px solid var(--accent); display: inline-block; padding-bottom: 0.3rem; }
+        .about-box p { margin-bottom: 1.2rem; color: var(--text-dark); font-size: 1.05rem; }
+
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .feature-card { background: var(--bg-body); border-left: 4px solid var(--primary); padding: 1.5rem; border-radius: 0 8px 8px 0; }
+        .feature-card h3 { color: var(--primary); margin-bottom: 0.5rem; }
+
+        footer { background: var(--primary); color: #FFF; text-align: center; padding: 2.5rem 1rem; margin-top: 4rem; border-top: 4px solid var(--accent); }
+        footer p { opacity: 0.9; font-size: 0.95rem; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; text-align: center; }
+            nav { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>CORIEL<span>.</span></h1>
+            <span class="slogan-tag">O seu parceiro de aço!</span>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-link">Início</a>
+            <a href="empresa.html" class="nav-link active">Empresa</a>
+            <a href="produtos.html" class="nav-link">Produtos Siderúrgicos</a>
+            <a href="contacto.html" class="nav-link">Contacto Comercial</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="about-box">
+            <h2>Sobre a CORIEL</h2>
+            <p>A <strong>CORIEL – Comércio e Indústria (SU), LDA</strong> é uma empresa especializada no fornecimento e processamento de produtos siderúrgicos, assumindo-se como um parceiro estratégico fundamental para os setores industrial, petrolífero, energético e da construção civil em Angola.</p>
+            
+            <p>Com um compromisso constante com a excelência técnica, destacamo-nos pela capacidade de responder com rigor e rapidez às solicitações mais exigentes do mercado. Oferecemos soluções completas em ligas metálicas, perfis estruturais, tubagens e chapas conformadas, assegurando total rastreabilidade do material e o cumprimento de normas de qualidade rigorosas.</p>
+
+            <div class="grid-2">
+                <div class="feature-card">
+                    <h3>Engenharia de Precisão e Processamento Avançado</h3>
+                    <p>A CORIEL oferece serviços especializados de corte, guilhotinagem e quinagem de chapas com tolerâncias rigorosas. Garantimos a conformidade técnica dos componentes fabricados, em total alinhamento com as especificações dos seus projetos de engenharia.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Soluções Siderúrgicas em Larga Escala</h3>
+                    <p>Mantemos um amplo stock de tubos, chapas e perfis metálicos para garantir rapidez e eficiência na cadeia de suprimentos dos nossos clientes, assegurando fornecimento contínuo para projetos de grande porte.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 CORIEL – Comércio e Indústria (SU), LDA. Todos os direitos reservados.</p>
+        <p style="margin-top: 0.5rem; color: #CBD5E0; font-size: 0.85rem;">O seu parceiro de aço em Angola.</p>
+    </footer>
+
+</body>
+</html>
