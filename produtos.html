@@ -3,62 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos Siderúrgicos – CORIEL</title>
+    <title>CORIEL – O seu parceiro de aço!</title>
     <style>
         :root {
-            --primary: #0A2540;
-            --primary-light: #153D66;
-            --accent: #E65100;
-            --accent-hover: #BF360C;
-            --bg-body: #F4F6F8;
-            --bg-card: #FFFFFF;
-            --text-dark: #1A202C;
-            --text-muted: #4A5568;
-            --border-color: #CBD5E0;
+            --primary: #0B1F33;
+            --steel: #66717A;
+            --white: #FFFFFF;
+            --accent: #1769AA;
+            --accent-hover: #114F80;
+            --bg-light: #F4F6F7;
+            --text-dark: #33404A;
+            --border-color: #D5DADD;
+            --text-light: #D9E0E5;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-        body { background-color: var(--bg-body); color: var(--text-dark); line-height: 1.6; }
+        body { background-color: var(--white); color: var(--text-dark); line-height: 1.6; }
 
-        header { background: var(--primary); color: #FFF; padding: 1rem 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-        .logo h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: 1px; color: #FFF; }
+        /* CABEÇALHO / MENU */
+        header { background: var(--primary); color: var(--white); padding: 1rem 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .logo h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: 1px; color: var(--white); }
         .logo span { color: var(--accent); }
-        .slogan-tag { font-size: 0.8rem; color: #CBD5E0; font-style: italic; display: block; }
+        .slogan-tag { font-size: 0.8rem; color: var(--text-light); font-style: italic; display: block; }
 
-        nav { display: flex; gap: 1rem; }
-        .nav-link { text-decoration: none; color: #FFF; font-size: 1rem; font-weight: 600; padding: 0.6rem 1.2rem; border-radius: 4px; transition: 0.3s; }
-        .nav-link:hover, .nav-link.active { background: var(--accent); color: #FFF; }
+        nav { display: flex; gap: 0.8rem; align-items: center; }
+        .nav-link { text-decoration: none; color: var(--white); font-size: 0.95rem; font-weight: 600; padding: 0.6rem 1rem; border-radius: 4px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { background: var(--accent); color: var(--white); }
+        .btn-cta-nav { background: var(--accent); color: var(--white); padding: 0.6rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-cta-nav:hover { background: var(--accent-hover); }
 
         .container { padding: 3rem 8%; max-width: 1300px; margin: 0 auto; }
 
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
-        .card { background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.04); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.08); }
-        .card img { width: 100%; height: 220px; object-fit: cover; }
-        .card-body { padding: 1.5rem; }
-        .card-body h3 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.8rem; }
-        .card-body p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
-        .card-body ul { list-style-position: inside; color: var(--text-dark); font-size: 0.9rem; margin-bottom: 1.2rem; }
+        /* BANNER PRINCIPAL */
+        .hero { background: linear-gradient(135deg, rgba(11,31,51,0.85), rgba(11,31,51,0.85)), url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80') center/cover; color: var(--white); padding: 5rem 2rem; border-radius: 12px; text-align: center; margin-bottom: 3rem; }
+        .hero h2 { font-size: 2.8rem; margin-bottom: 1rem; font-weight: 700; color: var(--white); }
+        .hero p { font-size: 1.2rem; max-width: 750px; margin: 0 auto 2rem auto; color: var(--text-light); }
+        
+        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .cta-btn { background: var(--accent); color: var(--white); border: 2px solid var(--accent); padding: 0.8rem 2rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; }
+        .cta-btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+        .cta-btn-secondary { background: transparent; color: var(--white); border: 2px solid var(--white); padding: 0.8rem 2rem; font-size: 1rem; font-weight: bold; border-radius: 6px; transition: 0.3s; text-decoration: none; display: inline-block; }
+        .cta-btn-secondary:hover { background: var(--white); color: var(--primary); }
 
-        .class-title { background: var(--primary); color: #FFF; padding: 0.8rem 1.2rem; font-size: 1.2rem; border-radius: 6px 6px 0 0; }
+        /* CARDS E DESTAQUES */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: var(--white); border-radius: 8px; border: 1px solid var(--border-color); padding: 1.8rem; box-shadow: 0 4px 8px rgba(0,0,0,0.03); transition: 0.3s; }
+        .card:hover { transform: translateY(-4px); border-color: var(--accent); }
+        .card h3 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.8rem; }
+        .card p { color: var(--steel); font-size: 0.95rem; }
 
-        .cta-btn { background: var(--accent); color: #FFF; border: none; padding: 0.8rem 1.5rem; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; text-align: center; }
-        .cta-btn:hover { background: var(--accent-hover); }
+        /* SEÇÃO DE DESTAQUE / CHAMADA */
+        .cta-banner { background: var(--primary); color: var(--white); padding: 3.5rem 2rem; border-radius: 10px; text-align: center; margin: 3rem 0; }
+        .cta-banner h3 { font-size: 2rem; margin-bottom: 0.8rem; color: var(--white); }
+        .cta-banner p { color: var(--text-light); font-size: 1.1rem; margin-bottom: 1.5rem; }
 
-        /* CALCULADORA */
-        .calc-box { background: var(--bg-card); padding: 2.5rem; border-radius: 10px; border: 1px solid var(--border-color); max-width: 700px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .calc-box h3 { color: var(--primary); margin-bottom: 1.5rem; text-align: center; }
-        .form-group { margin-bottom: 1.2rem; }
-        .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--primary); }
-        .form-group input, .form-group select { width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 6px; font-size: 1rem; outline: none; }
-        .calc-result { background: #EBF8FF; border-left: 4px solid var(--primary); padding: 1rem; margin-top: 1.5rem; font-size: 1.1rem; font-weight: bold; color: var(--primary); display: none; }
-
-        footer { background: var(--primary); color: #FFF; text-align: center; padding: 2.5rem 1rem; margin-top: 4rem; border-top: 4px solid var(--accent); }
-        footer p { opacity: 0.9; font-size: 0.95rem; }
+        /* RODAPÉ */
+        footer { background: var(--primary); color: var(--white); text-align: center; padding: 3rem 1rem 1.5rem 1rem; margin-top: 4rem; border-top: 1px solid var(--steel); }
+        footer a { color: var(--text-light); text-decoration: none; transition: 0.3s; }
+        footer a:hover { color: var(--accent); }
+        footer p { color: var(--text-light); font-size: 0.95rem; }
+        .footer-line { border-top: 1px solid var(--steel); margin-top: 2rem; padding-top: 1rem; font-size: 0.85rem; color: var(--text-light); }
 
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 1rem; text-align: center; }
             nav { flex-wrap: wrap; justify-content: center; }
+            .hero h2 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -70,121 +79,57 @@
             <span class="slogan-tag">O seu parceiro de aço!</span>
         </div>
         <nav>
-            <a href="index.html" class="nav-link">Início</a>
-            <a href="empresa.html" class="nav-link">Empresa</a>
-            <a href="produtos.html" class="nav-link active">Produtos Siderúrgicos</a>
-            <a href="contacto.html" class="nav-link">Contacto Comercial</a>
+            <a href="index.html" class="nav-link active">Início</a>
+            <a href="empresa.html" class="nav-link">Sobre Nós</a>
+            <a href="produtos.html" class="nav-link">Produtos</a>
+            <a href="contacto.html" class="nav-link">Contacto</a>
+            <a href="contacto.html" class="btn-cta-nav">Solicitar Cotação</a>
         </nav>
     </header>
 
     <main class="container">
-        <h2 style="color: var(--primary); margin-bottom: 0.5rem; text-align: center;">Catálogo de Produtos Siderúrgicos</h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem;">Estruturado por classes técnicas para facilitar a seleção da sua encomenda.</p>
-
-        <div class="grid-3">
-            <!-- CLASSE 1 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80" alt="Perfis Estruturais">
-                <div class="class-title">Classe 1: Perfis Estruturais (Aço)</div>
-                <div class="card-body">
-                    <p>Perfis laminados a quente ideais para estruturas metálicas pesadas e engenharia civil.</p>
-                    <ul>
-                        <li>Vigas HEB / HEA / IPE</li>
-                        <li>Perfis UPN e Cantoneiras</li>
-                        <li>Aço estrutural de alta densidade</li>
-                    </ul>
-                    <a href="contacto.html" class="cta-btn" style="width: 100%;">Cotar Classe 1</a>
-                </div>
-            </div>
-
-            <!-- CLASSE 2 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Chapas e Bobinas">
-                <div class="class-title">Classe 2: Chapas & Bobinas</div>
-                <div class="card-body">
-                    <p>Gama completa de chapas siderúrgicas para fabricação, revestimentos e caldeiraria.</p>
-                    <ul>
-                        <li>Chapas Laminadas a Quente e Frio</li>
-                        <li>Chapas Xadrez (Antiderrapantes)</li>
-                        <li>Chapas Galvanizadas protetoras</li>
-                    </ul>
-                    <a href="contacto.html" class="cta-btn" style="width: 100%;">Cotar Classe 2</a>
-                </div>
-            </div>
-
-            <!-- CLASSE 3 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Tubos e Varões">
-                <div class="class-title">Classe 3: Tubos & Varões</div>
-                <div class="card-body">
-                    <p>Tubagens estruturais e varões de aço reforçado para construção e serralharia.</p>
-                    <ul>
-                        <li>Tubos Quadrados, Retangulares e Redondos</li>
-                        <li>Varão de Construção e Aço de Espiamento</li>
-                        <li>Redes Eletrossoldadas</li>
-                    </ul>
-                    <a href="contacto.html" class="cta-btn" style="width: 100%;">Cotar Classe 3</a>
-                </div>
+        <!-- Banner Principal -->
+        <div class="hero">
+            <h2>CORIEL, o seu parceiro de aço!</h2>
+            <p>Fornecimento especializado de produtos siderúrgicos, materiais metálicos e equipamentos técnicos de elevada precisão e resistência.</p>
+            <div class="btn-group">
+                <a href="produtos.html" class="cta-btn">Ver Catálogo de Produtos</a>
+                <a href="contacto.html" class="cta-btn-secondary">Pedir Orçamento</a>
             </div>
         </div>
 
-        <!-- CALCULADORA DE PESO -->
-        <div class="calc-box">
-            <h3>Calculadora Estimativa de Peso do Aço</h3>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Estime o peso aproximado para transporte e logística dos seus materiais em aço.</p>
+        <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem; font-size: 2rem;">Excelência no Setor Siderúrgico</h2>
 
-            <div class="form-group">
-                <label for="tipoAco">Tipo de Material</label>
-                <select id="tipoAco">
-                    <option value="chapa">Chapa / Placa de Aço</option>
-                    <option value="varao">Varão / Barra Redonda</option>
-                </select>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Garantia de Qualidade</h3>
+                <p>Produtos rigorosamente selecionados em conformidade com as normas internacionais de resistência metálica e construção civil.</p>
             </div>
-
-            <div class="form-group">
-                <label for="comprimento">Comprimento total (metros)</label>
-                <input type="number" id="comprimento" placeholder="Ex: 1.2" step="0.1">
+            <div class="card">
+                <h3>Atendimento Técnico</h3>
+                <p>Apoio comercial dedicado ao dimensionamento preciso das necessidades do seu projeto ou obra industrial.</p>
             </div>
-
-            <div class="form-group">
-                <label for="quantidade">Quantidade (Unidades / Peças)</label>
-                <input type="number" id="quantidade" placeholder="Ex: 50" value="1">
+            <div class="card">
+                <h3>Logística Eficiente</h3>
+                <p>Prontidão no fornecimento de perfis, chapas, tubos e varões em Luanda e em todo o território nacional.</p>
             </div>
+        </div>
 
-            <button class="cta-btn" style="width: 100%;" onclick="calcularPeso()">Calcular Peso Estimado</button>
-
-            <div id="resultadoCalc" class="calc-result"></div>
+        <!-- Seção de Destaque / Chamada -->
+        <div class="cta-banner">
+            <h3>Precisa de materiais siderúrgicos para o seu projeto?</h3>
+            <p>Fornecemos soluções completas em aço para a sua indústria ou empreendimento com total garantia e rapidez.</p>
+            <a href="contacto.html" class="cta-btn">Falar com a Equipa Comercial</a>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 CORIEL – Comércio e Indústria (SU), LDA. Todos os direitos reservados.</p>
-        <p style="margin-top: 0.5rem; color: #CBD5E0; font-size: 0.85rem;">O seu parceiro de aço em Angola.</p>
+        <p><strong>CORIEL – Comércio e Indústria (SU), LDA.</strong></p>
+        <p style="margin-top: 0.5rem;"><a href="index.html">Início</a> | <a href="empresa.html">Sobre Nós</a> | <a href="produtos.html">Produtos Siderúrgicos</a> | <a href="contacto.html">Contacto</a></p>
+        <div class="footer-line">
+            <p>© 2026 CORIEL. O seu parceiro de aço em Angola.</p>
+        </div>
     </footer>
 
-    <script>
-        function calcularPeso() {
-            const comp = parseFloat(document.getElementById('comprimento').value);
-            const qtd = parseInt(document.getElementById('quantidade').value);
-            const resBox = document.getElementById('resultadoCalc');
-
-            if (isNaN(comp) || isNaN(qtd) || comp <= 0 || qtd <= 0) {
-                resBox.style.display = 'block';
-                resBox.style.background = '#FFF5F5';
-                resBox.style.borderColor = '#E53E3E';
-                resBox.style.color = '#C53030';
-                resBox.innerText = 'Por favor, insira valores válidos para o comprimento e quantidade.';
-                return;
-            }
-
-            const pesoEstimado = (comp * 2.5 * qtd).toFixed(2);
-
-            resBox.style.display = 'block';
-            resBox.style.background = '#EBF8FF';
-            resBox.style.borderColor = '#3182CE';
-            resBox.style.color = '#2B6CB0';
-            resBox.innerText = `Peso Estimado Total: ~ ${pesoEstimado} kg (para ${qtd} unidade(s))`;
-        }
-    </script>
 </body>
 </html>
