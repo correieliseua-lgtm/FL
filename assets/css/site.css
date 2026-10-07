@@ -136,3 +136,11 @@ a{color:inherit}
 .footer-subhead{margin-top:10px!important}
 .footer-bottom{padding-top:8px;font-size:10px}
 @media(max-width:620px){.site-footer{padding:18px 0 10px}.footer-grid{gap:14px;padding-bottom:12px}}
+
+
+/* Marca do rodapé centrada e sem descrição redundante */
+.footer-brand{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.footer-brand>.brand{justify-content:center}
+.footer-brand .brand-copy{text-align:left}
+.footer-grid{align-items:center}
+@media(max-width:900px){.footer-brand{align-items:flex-start;text-align:left}.footer-brand>.brand{justify-content:flex-start}}
