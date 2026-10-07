@@ -200,7 +200,7 @@ a{color:inherit}
 
 /* Nova estrutura institucional da pagina A Empresa */
 .company-history-hero{background-position:center 45%}
-.company-tabs-section{padding:82px 0;background:#fff}
+.company-tabs-section{padding:82px 0;background:var(--navy);color:#fff}.company-tabs-section .section-head h2{color:#fff}.company-tabs-section .section-head p{color:#C7D0D8}.company-tabs{border-bottom-color:rgba(255,255,255,.2)}.company-tab{color:#C7D0D8}.company-tab:hover{color:#fff}.company-tab.is-active{color:#fff;border-bottom-color:var(--accent)}
 .company-tabs{display:flex;gap:0;border-bottom:1px solid #C9D1D7;margin-top:28px}
 .company-tab{appearance:none;border:0;border-bottom:3px solid transparent;background:transparent;padding:15px 28px;color:#687580;font:800 12px Manrope,sans-serif;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer}
 .company-tab:hover{color:var(--navy)}
