@@ -196,3 +196,30 @@ a{color:inherit}
 .company-process{position:relative;overflow:hidden}
 .company-process:after{content:"CORIEL";position:absolute;right:-40px;bottom:-55px;font:800 150px/1 Manrope,sans-serif;letter-spacing:8px;color:rgba(255,255,255,.025);pointer-events:none}
 @media(max-width:620px){.company-hero{min-height:440px}.company-process:after{font-size:90px}}
+
+
+/* Nova estrutura institucional da pagina A Empresa */
+.company-history-hero{background-position:center 45%}
+.company-tabs-section{padding:82px 0;background:#fff}
+.company-tabs{display:flex;gap:0;border-bottom:1px solid #C9D1D7;margin-top:28px}
+.company-tab{appearance:none;border:0;border-bottom:3px solid transparent;background:transparent;padding:15px 28px;color:#687580;font:800 12px Manrope,sans-serif;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer}
+.company-tab:hover{color:var(--navy)}
+.company-tab.is-active{color:var(--navy);border-bottom-color:var(--accent)}
+.company-tab-panels{background:#F3F5F6;border:1px solid var(--line);border-top:0}
+.company-tab-panel{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:38px 42px;min-height:205px}
+.company-tab-panel[hidden]{display:none}
+.company-tab-panel .tab-number{font:800 13px Manrope;color:var(--accent-dark);letter-spacing:1px}
+.company-tab-panel h3{font:800 28px Manrope;color:var(--navy);margin-bottom:12px}
+.company-tab-panel p{max-width:800px;color:var(--muted);font-size:15px;line-height:1.75}
+.values-tab-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px}
+.values-tab-grid div{border-left:2px solid var(--accent);padding:10px 12px;background:#fff}
+.values-tab-grid strong{display:block;color:var(--navy);font:800 13px Manrope;margin-bottom:5px}
+.values-tab-grid span{display:block;color:var(--muted);font-size:11px;line-height:1.5}
+.company-process-expanded{padding:82px 0}
+.company-process-expanded .process-step{padding:21px 0}
+.company-culture{background:#F7F8F9;padding-top:76px}
+.company-culture-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.company-culture h2{font:800 clamp(29px,3.3vw,42px)/1.16 Manrope;color:var(--navy);letter-spacing:-.8px}
+.company-culture p{font-size:15px;color:var(--muted);margin-bottom:16px;line-height:1.75}
+@media(max-width:900px){.values-tab-grid{grid-template-columns:repeat(3,1fr)}.company-culture-grid{grid-template-columns:1fr;gap:25px}}
+@media(max-width:620px){.company-tabs-section{padding:58px 0}.company-tabs{overflow-x:auto}.company-tab{padding:13px 18px;white-space:nowrap}.company-tab-panel{grid-template-columns:1fr;padding:28px 22px}.values-tab-grid{grid-template-columns:1fr 1fr}.company-process-expanded{padding:58px 0}.company-culture{padding-top:58px}.company-culture-grid{gap:20px}}
