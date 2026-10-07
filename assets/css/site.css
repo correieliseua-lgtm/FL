@@ -121,3 +121,18 @@ a{color:inherit}
 .carousel-dot{width:8px;height:8px;border:0;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;padding:0}
 .carousel-dot.is-active{width:26px;border-radius:8px;background:var(--accent)}
 @media(max-width:620px){.brand-logo{width:40px;height:40px}.hero-carousel{min-height:510px}.carousel-controls{bottom:28px;left:24px}.hero-slide .hero-content{width:100%;padding:70px 24px 105px}}
+
+
+/* Rodapé compacto */
+.site-footer{padding:18px 0 10px}
+.footer-grid{gap:18px;padding-bottom:12px}
+.footer-brand .brand-logo{width:34px;height:34px}
+.footer-brand .brand{gap:8px}
+.footer-brand .brand-copy strong{font-size:19px}
+.footer-brand .brand-copy small{font-size:9px;letter-spacing:1px;margin-top:3px;text-transform:none}
+.footer-brand p{font-size:11px;line-height:1.35;margin-top:5px}
+.footer-col h3{font-size:11px;margin-bottom:6px}
+.footer-col a,.footer-col p{font-size:11px;line-height:1.4;margin-bottom:3px}
+.footer-subhead{margin-top:10px!important}
+.footer-bottom{padding-top:8px;font-size:10px}
+@media(max-width:620px){.site-footer{padding:18px 0 10px}.footer-grid{gap:14px;padding-bottom:12px}}
