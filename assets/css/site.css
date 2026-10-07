@@ -104,3 +104,20 @@ a{color:inherit}
 .footer-bottom{border-top:1px solid #293846;padding-top:18px;display:flex;justify-content:space-between;gap:20px;color:#8F9DA8;font-size:11px}
 @media(max-width:900px){.header-inner{gap:15px;padding-inline:20px}.main-nav{gap:2px}.main-nav a{padding:9px 8px;font-size:12px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.value-grid{grid-template-columns:repeat(2,1fr)}.intro-grid{grid-template-columns:1fr}.intro-image{min-height:280px}.intro-image::before{display:none}.contact-layout{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.header-inner{align-items:flex-start;flex-direction:column;padding:14px 20px;gap:12px}.main-nav{justify-content:flex-start;width:100%;gap:3px}.main-nav a{padding:7px 9px;font-size:11px}.wrap{width:min(var(--max),100% - 32px)}.hero{min-height:510px}.hero-content{width:100%;padding:70px 24px 105px}.hero::after{width:55%;height:55px}.hero p{font-size:15px}.section{padding:60px 0}.section-head{align-items:flex-start;flex-direction:column;gap:12px}.product-grid{grid-template-columns:1fr}.product-photo{height:230px}.value-grid{grid-template-columns:1fr 1fr}.value-card{padding:20px 16px;min-height:165px}.stats-strip{grid-template-columns:1fr;padding:20px}.stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.18);padding:12px 4px}.stat:last-child{border:0}.cta-panel{align-items:flex-start;flex-direction:column;padding:32px 24px}.two-col{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}.footer-grid{grid-template-columns:1fr;gap:25px}.footer-bottom{flex-direction:column}.page-hero{padding:58px 0}}
+
+/* CORIEL identity, contact details and homepage carousel */
+.brand-logo{width:48px;height:48px;object-fit:contain;flex:0 0 auto}
+.brand-mark{display:none}
+.footer-subhead{margin-top:20px}
+.hero-carousel{display:block;min-height:580px}
+.hero-carousel::before{display:none}
+.hero-slide{position:absolute;inset:0;display:flex;align-items:center;opacity:0;visibility:hidden;transition:opacity .8s ease; background-image:linear-gradient(90deg,rgba(10,22,35,.93) 0%,rgba(10,22,35,.75) 48%,rgba(10,22,35,.25) 100%),var(--slide-image);background-size:cover;background-position:center}
+.hero-slide.is-active{opacity:1;visibility:visible}
+.hero-slide .hero-content{width:min(var(--max),100% - 48px);margin:auto}
+.carousel-controls{position:absolute;z-index:5;bottom:42px;left:max(24px,calc((100% - var(--max))/2 + 28px));display:flex;align-items:center;gap:16px}
+.carousel-arrow{width:38px;height:38px;border:1px solid rgba(255,255,255,.5);background:rgba(17,30,45,.4);color:white;font-size:25px;line-height:1;cursor:pointer}
+.carousel-arrow:hover{background:var(--accent)}
+.carousel-dots{display:flex;gap:8px;align-items:center}
+.carousel-dot{width:8px;height:8px;border:0;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;padding:0}
+.carousel-dot.is-active{width:26px;border-radius:8px;background:var(--accent)}
+@media(max-width:620px){.brand-logo{width:40px;height:40px}.hero-carousel{min-height:510px}.carousel-controls{bottom:28px;left:24px}.hero-slide .hero-content{width:100%;padding:70px 24px 105px}}
