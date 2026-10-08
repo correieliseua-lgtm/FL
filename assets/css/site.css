@@ -7,7 +7,7 @@ img{display:block;max-width:100%}
 a{color:inherit}
 .site-header{position:sticky;top:0;z-index:20;background:rgba(17,30,45,.97);color:var(--white);box-shadow:0 8px 24px rgba(5,15,25,.12)}
 .header-inner{max-width:var(--max);margin:auto;min-height:82px;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:30px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:max-content}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;min-width:max-content;flex:0 0 auto}.brand-name{font:800 20px/1 Manrope,sans-serif;letter-spacing:2px;color:var(--white)}
 .brand-mark{width:42px;height:42px;border:2px solid var(--accent);display:grid;place-items:center;font-family:Manrope,sans-serif;font-weight:800;font-size:19px;letter-spacing:-2px;transform:skew(-7deg)}
 .brand-copy strong{display:block;font:800 23px/1.05 Manrope,sans-serif;letter-spacing:2px}
 .brand-copy small{display:block;margin-top:5px;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#C6CFD6}
@@ -106,7 +106,7 @@ a{color:inherit}
 @media(max-width:620px){.header-inner{align-items:flex-start;flex-direction:column;padding:14px 20px;gap:12px}.main-nav{justify-content:flex-start;width:100%;gap:3px}.main-nav a{padding:7px 9px;font-size:11px}.wrap{width:min(var(--max),100% - 32px)}.hero{min-height:510px}.hero-content{width:100%;padding:70px 24px 105px}.hero::after{width:55%;height:55px}.hero p{font-size:15px}.section{padding:60px 0}.section-head{align-items:flex-start;flex-direction:column;gap:12px}.product-grid{grid-template-columns:1fr}.product-photo{height:230px}.value-grid{grid-template-columns:1fr 1fr}.value-card{padding:20px 16px;min-height:165px}.stats-strip{grid-template-columns:1fr;padding:20px}.stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.18);padding:12px 4px}.stat:last-child{border:0}.cta-panel{align-items:flex-start;flex-direction:column;padding:32px 24px}.two-col{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}.footer-grid{grid-template-columns:1fr;gap:25px}.footer-bottom{flex-direction:column}.page-hero{padding:58px 0}}
 
 /* CORIEL identity, contact details and homepage carousel */
-.brand-logo{width:48px;height:48px;object-fit:contain;flex:0 0 auto}
+.brand-logo{width:32px;height:32px;object-fit:contain;flex:0 0 auto}
 .brand-mark{display:none}
 .footer-subhead{margin-top:20px}
 .hero-carousel{display:block;min-height:580px}
@@ -120,7 +120,7 @@ a{color:inherit}
 .carousel-dots{display:flex;gap:8px;align-items:center}
 .carousel-dot{width:8px;height:8px;border:0;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;padding:0}
 .carousel-dot.is-active{width:26px;border-radius:8px;background:var(--accent)}
-@media(max-width:620px){.brand-logo{width:40px;height:40px}.hero-carousel{min-height:510px}.carousel-controls{bottom:28px;left:24px}.hero-slide .hero-content{width:100%;padding:70px 24px 105px}}
+@media(max-width:620px){.brand-logo{width:28px;height:28px}.brand-name{font-size:18px;letter-spacing:1.5px}.hero-carousel{min-height:510px}.carousel-controls{bottom:28px;left:24px}.hero-slide .hero-content{width:100%;padding:70px 24px 105px}}
 
 
 /* Rodapé compacto */
