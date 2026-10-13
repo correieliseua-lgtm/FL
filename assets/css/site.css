@@ -327,3 +327,9 @@ a{color:inherit}
 .breadcrumb a{color:inherit}
 @media(max-width:800px){.product-detail-layout{grid-template-columns:1fr;gap:24px}.product-detail-main{height:330px}}
 @media(max-width:520px){.product-detail-main{height:260px}.product-detail-secondary{grid-template-columns:100px 1fr}.product-detail-secondary img{width:100px;height:85px}.spec-table th,.spec-table td{padding:10px 8px;font-size:12px}.detail-link{margin-bottom:12px}}
+
+/* Whole product card is a navigation target; quote CTA remains independent */
+.product-card[data-product-url]{cursor:pointer}
+.product-card[data-product-url]:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.product-card .product-title-link{pointer-events:none}
+.product-card .product-detail-link{pointer-events:none}
